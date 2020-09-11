@@ -1,4 +1,6 @@
 var models = require('../models');
+
+//const headers = require('../cors');
 // var messages = require('../models/messages.js');
 
 
@@ -8,7 +10,13 @@ module.exports = {
       if (err) {
         throw new Error ('error in controllers/messages.get');
       } else {
+        //res.set(headers);
+        res.append('access-control-allow-origin', '*');
+        res.append('access-control-allow-methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        res.append('access-control-allow-headers', 'content-type, accept');
+        res.append('access-control-max-age', 10);
         res.json(data);
+        res.end();
       }
     });
   }, // a function which handles a get request for all messages
@@ -26,7 +34,13 @@ module.exports = {
       } else {
         //res.send(data);
         console.log('message posted!');
+        //res.set(headers);
+        res.append('access-control-allow-origin', ['*']);
+        res.append('access-control-allow-methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        res.append('access-control-allow-headers', 'content-type, accept');
+        res.append('access-control-max-age', 10);
         res.end();
+
 
       }
     });
