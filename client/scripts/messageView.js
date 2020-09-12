@@ -1,12 +1,12 @@
 var MessageView = {
 
   render: function(obj) {
-    console.log(String(MessageView.escape(obj.roomname)).split(' ').join(''));
+    console.log(String(MessageView.escape(obj.room)).split(' ').join(''));
     return `
-    <div class = "${String(MessageView.escape(obj.roomname)).split(' ').join('')} chat">
+    <div class = "${String(MessageView.escape(obj.room)).split(' ').join('')} chat">
         <div class="username"><p>${MessageView.escape(obj.username)}</p></div>
-        <div class = "${String(MessageView.escape(obj.username)).split(' ').join('')}"><p>${MessageView.escape(obj.text)}</p></div>
-        <div><p>${MessageView.escape(obj.roomname)}</p></div>
+        <div class = "${String(MessageView.escape(obj.username)).split(' ').join('')}"><p>${MessageView.escape(obj.messageText)}</p></div>
+        <div><p>${MessageView.escape(obj.room)}</p></div>
     </div>`;
 
   },

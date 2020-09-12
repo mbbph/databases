@@ -26,7 +26,8 @@ var App = {
     console.log('fetch was called');
     Parse.readAll((data) => {
       // examine the response from the server request:
-      Messages.storage = data.results;
+      console.log(data);
+      Messages.storage = data;
       console.log(Messages.storage);
       MessagesView.render();
       RoomsView.render();

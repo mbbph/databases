@@ -22,8 +22,8 @@ var FormView = {
 
     var messageObj = {
       username: App.username,
-      text: event.currentTarget['0'].value,
-      roomname: selectedRoom
+      messageText: event.currentTarget['0'].value,
+      room: selectedRoom
     };
 
     Parse.create(messageObj);

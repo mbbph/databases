@@ -11,7 +11,7 @@ var RoomsView = {
   render: function() {
     var rooms = [];
     for (var i = 0; i < Messages.storage.length; i++) {
-      rooms.push(Messages.storage[i].roomname);
+      rooms.push(Messages.storage[i].room);
     }
 
     var uniqueRooms = new Set(rooms);
